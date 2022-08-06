@@ -31,4 +31,14 @@ function playSound(name)
 {
     var audio=new Audio("sounds/"+name+".mp3");
     audio.play();
+    animatePress(name);
+}
+
+function animatePress(currentColour)
+{
+    $("#"+currentColour).addClass("pressed");
+
+    setTimeout(function(){
+        $("#"+currentColour).removeClass("pressed");
+    },100);
 }
